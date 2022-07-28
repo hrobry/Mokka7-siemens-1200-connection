@@ -5,37 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04030659-5d74-4e7b-9d42-ddb514c39e89" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dataReadWrite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/plcS71200.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$10.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$11.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$7.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$8.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI$9.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/dataReadWrite$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/dataReadWrite$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/dataReadWrite.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/plcS71200$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/plcS71200$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/plcS71200$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/plcS71200$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/plcS71200$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/plcS71200$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/plcS71200$7.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/plcS71200.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Wykres.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wykres2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/plcS71200.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/plcS71200.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plcS71200$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plcS71200$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plcS71200$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plcS71200$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plcS71200$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plcS71200$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plcS71200$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plcS71200$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plcS71200$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plcS71200$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plcS71200$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plcS71200$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plcS71200$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plcS71200$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plcS71200.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plcS71200.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,21 +66,14 @@
   <component name="RunManager" selected="Application.GUI">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI" />
-      <module name="Mokka7 siemens s71200" />
+      <module name="TIA_PORTAL_PLC_TO_JAVA_PC" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Moka" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Moka" />
-      <module name="Mokka7 siemens s71200" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PC_PLC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PC_PLC" />
-      <module name="Mokka7 siemens s71200" />
+    <configuration name="Wykres" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Wykres" />
+      <module name="TIA_PORTAL_PLC_TO_JAVA_PC" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,7 +87,14 @@
     </configuration>
     <configuration name="plcS71200" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="plcS71200" />
-      <module name="Mokka7 siemens s71200" />
+      <module name="TIA_PORTAL_PLC_TO_JAVA_PC" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="wykres2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wykres2" />
+      <module name="TIA_PORTAL_PLC_TO_JAVA_PC" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,10 +115,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GUI" />
-        <item itemvalue="Application.dataReadWrite" />
+        <item itemvalue="Application.wykres2" />
         <item itemvalue="Application.plcS71200" />
-        <item itemvalue="Application.Moka" />
-        <item itemvalue="Application.PC_PLC" />
+        <item itemvalue="Application.Wykres" />
+        <item itemvalue="Application.dataReadWrite" />
       </list>
     </recent_temporary>
   </component>
@@ -150,6 +132,17 @@
       <updated>1653381960648</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

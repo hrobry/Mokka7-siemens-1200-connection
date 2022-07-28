@@ -12,6 +12,13 @@ public class plcS71200 implements Runnable {
     public static byte[] BitSendBuffer = new byte[65536];
     public static byte[] WordBuffer = new byte[65536];
     public  S7Client Client;
+    static int readedData;
+
+    String nazwaWykesu = "wykres";
+    wykres2 wykres = new wykres2(nazwaWykesu,readedData);
+    Thread t3 =new Thread(wykres);
+
+    // Using the constructor Thread(Runnable r)
     JFrame frame = new JFrame();
     private boolean ReadBit=false;
     public boolean isVisible() {
@@ -178,11 +185,12 @@ public class plcS71200 implements Runnable {
             if (ReadBit == true) {
 
                 //Client.Connect();
-                Client.ReadArea(S7.S7AreaDB,Integer.parseInt(DBNumer.getText()),0,2,WordBuffer);
+                Client.ReadArea(S7.S7AreaDB,Integer.parseInt(DBNumer.getText()),0,4,WordBuffer);
                //  System.out.println(WordBuffer[0]);
               //  System.out.println(ReadBit);
-                int readData = S7.GetWordAt(WordBuffer,Integer.parseInt(DBWord.getText()));
-               // System.out.println(readData);
+                int readData = S7.GetDIntAt(WordBuffer,Integer.parseInt(DBWord.getText()));
+                readedData =readData;
+                System.out.println(readData);
                 statusWord.setText(Integer.toString(readData));
                // System.out.println( "READ BIT");
                 printWord(WordBuffer);
@@ -328,6 +336,11 @@ public class plcS71200 implements Runnable {
         ReadButton.setBounds(firstColB, 200,fieldSizeL ,fieldSizeH);
         ReadButton.setText("READ");
         frame.getContentPane().add(ReadButton);
+
+        JButton ChartButton = new JButton();
+        ChartButton.setBounds(firstColB, 230,fieldSizeL ,fieldSizeH);
+        ChartButton.setText("CHART");
+        frame.getContentPane().add(ChartButton);
 
         I00B.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -479,7 +492,18 @@ public class plcS71200 implements Runnable {
         });
 
 
+        ChartButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
 
+            t3.start();
+
+
+
+            }
+
+
+
+        });
         frame.setVisible(visible);
     }
 
