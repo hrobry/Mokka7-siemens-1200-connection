@@ -1,7 +1,11 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 import com.sourceforge.snap7.moka7.*;
 
@@ -18,6 +22,7 @@ public static byte[] Buffer = new byte[65536];
 
         plcS71200 plc1200 = new plcS71200(Client,false);
         dataReadWrite readWrite = new dataReadWrite(Client,false);
+        About about = new About();
         Thread t1 =new Thread(plc1200);   // Using the constructor Thread(Runnable r)
         Thread t2 =new Thread(readWrite );
 
@@ -25,10 +30,20 @@ public static byte[] Buffer = new byte[65536];
         int fieldSizeH = 25,fieldSizeL = 120;
 
         JFrame frame = new JFrame();
-        frame.setBounds(100, 100, 600, 400);
+        frame.setBounds(100, 100, 450, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("PLC SIEMENS S7");
+        frame.setTitle("PLC SIEMENS S7 1200");
         frame.getContentPane().setLayout(null);
+
+try {
+    BufferedImage myPicture = ImageIO.read(new File("1211c.jpg"));
+
+    JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+    picLabel.setBounds(20, 160, 230, 230);
+    frame.getContentPane().add(picLabel);
+}catch(IOException e){}
+
+
 
         JLabel label = new JLabel("PLC ");
         label.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -83,55 +98,6 @@ public static byte[] Buffer = new byte[65536];
         textStatus.setColumns(10);
 
 
-        JLabel labelData = new JLabel("Data:");
-        labelData.setFont(new Font("Tahoma", Font.PLAIN, 12));
-        labelData.setBounds(firstCol, 150, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(labelData);
-
-        JTextField textData = new JTextField();
-        textData .setBounds(secondCol, 150, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(textData );
-        textData .setColumns(10);
-
-
-        JLabel labelnewData = new JLabel("newData:");
-        labelnewData.setFont(new Font("Tahoma", Font.PLAIN, 12));
-        labelnewData.setBounds(firstCol, 180, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(labelnewData);
-
-        JTextField textnewData = new JTextField();
-        textnewData.setBounds(secondCol, 180, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(textnewData);
-        textnewData.setColumns(10);
-
-
-        JLabel labelDBNumer = new JLabel("DBNumer:");
-        labelDBNumer.setFont(new Font("Tahoma", Font.PLAIN, 12));
-        labelDBNumer.setBounds(firstCol, 210, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(labelDBNumer );
-
-
-        JTextField textDBNumer = new JTextField();
-        textDBNumer.setBounds(secondCol, 210, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(textDBNumer);
-        textDBNumer.setColumns(10);
-
-
-        JLabel labelWord = new JLabel("Word:");
-        labelWord.setFont(new Font("Tahoma", Font.PLAIN, 12));
-        labelWord.setBounds(firstCol, 240, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(labelWord );
-
-
-        JTextField textWord = new JTextField();
-        textWord.setBounds(secondCol, 240, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(textWord);
-        textWord.setColumns(10);
-
-        JTextField statusWord = new JTextField();
-        statusWord.setBounds(secondCol, 270, fieldSizeL ,fieldSizeH);
-        frame.getContentPane().add(statusWord);
-        statusWord.setColumns(10);
 
         JButton connectButton = new JButton();
         connectButton.setBounds(thirdCol, 30,fieldSizeL ,fieldSizeH);
@@ -143,50 +109,64 @@ public static byte[] Buffer = new byte[65536];
         disconnectButton.setText("disconnect");
         frame.getContentPane().add(disconnectButton);
 
-        JButton readButton = new JButton();
-        readButton .setBounds(thirdCol, 90,fieldSizeL ,fieldSizeH);
-        readButton.setText("read");
-        frame.getContentPane().add(readButton );
-
-        JButton writeButton  = new JButton();
-        writeButton.setBounds(thirdCol, 120,fieldSizeL ,fieldSizeH);
-        writeButton.setText("write");
-        frame.getContentPane().add(writeButton);
 
         JButton plcStopButton = new JButton();
-        plcStopButton .setBounds(thirdCol, 150,fieldSizeL ,fieldSizeH);
+        plcStopButton .setBounds(thirdCol, 90,fieldSizeL ,fieldSizeH);
         plcStopButton.setText("PLC stop");
         frame.getContentPane().add(plcStopButton );
 
         JButton plcStartButton  = new JButton();
-        plcStartButton.setBounds(thirdCol, 180,fieldSizeL ,fieldSizeH);
+        plcStartButton.setBounds(thirdCol, 120,fieldSizeL ,fieldSizeH);
         plcStartButton.setText("plc Start");
         frame.getContentPane().add(plcStartButton);
 
         JButton plcDBINFOButton  = new JButton();
-        plcDBINFOButton .setBounds(thirdCol, 210,fieldSizeL ,fieldSizeH);
+        plcDBINFOButton .setBounds(thirdCol, 150,fieldSizeL ,fieldSizeH);
         plcDBINFOButton .setText("DB INFO");
         frame.getContentPane().add(plcDBINFOButton );
 
-        JButton BooltrueWriteButton  = new JButton();
-        BooltrueWriteButton .setBounds(thirdCol, 240,fieldSizeL ,fieldSizeH);
-        BooltrueWriteButton  .setText("BOOLTRUE ");
-        frame.getContentPane().add(BooltrueWriteButton  );
+
 
         JButton ReadWriteButton  = new JButton();
-        ReadWriteButton.setBounds(fourthCol, 240,fieldSizeL ,fieldSizeH);
+        ReadWriteButton.setBounds(thirdCol, 210,fieldSizeL ,fieldSizeH);
         ReadWriteButton.setText("READ/WRITE");
         frame.getContentPane().add(ReadWriteButton);
 
         JButton GetPlcStatus  = new JButton();
-        GetPlcStatus .setBounds(thirdCol, 270,fieldSizeL ,fieldSizeH);
+        GetPlcStatus .setBounds(thirdCol, 180,fieldSizeL ,fieldSizeH);
         GetPlcStatus .setText("PLC STATUS ");
         frame.getContentPane().add( GetPlcStatus );
 
         JButton S7200Button = new JButton();
-        S7200Button.setBounds(fourthCol, 270,fieldSizeL ,fieldSizeH);
+        S7200Button.setBounds(thirdCol, 240,fieldSizeL ,fieldSizeH);
         S7200Button .setText(" S7 1200 ");
         frame.getContentPane().add( S7200Button );
+
+        JButton About = new JButton();
+        About.setBounds(thirdCol, 270,fieldSizeL ,fieldSizeH);
+        About .setText(" About ");
+        frame.getContentPane().add(About );
+
+        About.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+
+
+                boolean ab =about.isVisible();
+                if(ab)
+                {System.out.println("ab = true");
+                    about.setVisible(false);
+                    about.setVISIBLE();
+
+                }else{
+                    System.out.println("ab = false");
+                    about.setVisible(true);
+                    about.setVISIBLE();
+
+                }
+
+            }
+        });
 
         S7200Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -299,30 +279,9 @@ public static byte[] Buffer = new byte[65536];
 
             }
         });
-        writeButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                {
-                    S7.SetWordAt(Buffer, Integer.parseInt(textWord.getText()), Integer.parseInt(textnewData.getText()));
-                    Client.WriteArea(S7.S7AreaDB, Integer.parseInt(textDBNumer.getText()), 0, 10, Buffer);
-
-                }
-            }
-        });
-
-        BooltrueWriteButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                {
-                    S7.SetBitAt(Buffer, 0, 0,true);
-                    S7.SetBitAt(Buffer,0, 1,true);
-                    S7.SetBitAt(Buffer, 0, 2,true);
-                    S7.SetBitAt(Buffer,0, 3,true);
 
 
-                    Client.WriteArea(S7.S7AreaDB, Integer.parseInt(textDBNumer.getText()), 0, 4, Buffer);
 
-                }
-            }
-        });
 
         ReadWriteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -357,25 +316,7 @@ public static byte[] Buffer = new byte[65536];
                 }
             }
         });
-        readButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (Client.Connected)
-                {
 
-                    Client.ReadArea(S7.S7AreaDB,Integer.parseInt(textDBNumer.getText()),0,10,Buffer);
-
-                   // System.out.println(Buffer);
-                    int readData = S7.GetWordAt(Buffer,Integer.parseInt(textWord.getText()));
-                    textData.setText(Integer.toString(readData));
-                 //   System.out.println(readData );
-                   // System.out.println(Buffer[0] );
-                   // System.out.println(Buffer[1] );
-                   // System.out.println(Buffer[2] );
-                    //System.out.println(Buffer[3] );
-
-                }
-            }
-        });
 
         connectButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
